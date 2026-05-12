@@ -18,7 +18,7 @@ const passwordGeneration = () => {
     let staticPassword = "";
     let randomPassword = "";
     let isDuplicate = false;
-    let passLength = +passSlider.value;
+    let passLength = passSlider.value;
 
     options.forEach(option => {
         if (option.checked) {
