@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 500px;
+    background: 
+    #ddd6fa;
+    color: #fff;
+    margin: 0 auto;
+}
+
+input[type="color"]{
+    border: none;
+    width: 32.5%;
+    height: 40px;
+    border-radius: 3px;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border: none;
+    border-radius: 3px;
+}
+
+a{
+    text-decoration: none;
+
+}
+
+.qr-text {          
+    margin-top: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    padding: 1rem;
+    display: block;
+    background: #181b29;
+    width: 100%;
+    margin: 0.5rem 0 1rem 0;
+    color: #fff;
+    outline: none;
+}
+
+.qr-text::placeholder{
+    color: #fff;
+    font-weight: 500;
+}
+
+#qr-code {
+    height: 300px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #181b29;
+    
+    
+}
+#qr-code img,
+ #qr-code canvas{
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain;
+    
+}
+
+.row {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.sizes{
+    width: 32.5%;
+    height: 40px;
+    color: #fff;
+    background: #181b29;
+    border-radius: 3px;
+}
+
+.btn {
+    color: #fff;
+    max-width: 200px;
+    padding: 14px;
+    background: rgb(34, 167, 255);
+    border-radius: 4px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500;
+    flex: 1;
+}
+
+svg {
+  fill: white !important;
+}
+.download img,
+ .share-btn img{
+    filter: brightness(0) invert(1);
+    
+}
+
+.btn img{
+    width: 20px;
+    margin-left: 10px;
+}
+
+.share-btn {
+    margin-left: 0.7rem;
+}
+
+.share-btn img {
+    margin-left: 0.1rem;
+    
+}
+
+.active-container{
+    display: flex;
+    margin:1rem 0; 
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 512px){
+    body {
+        max-width: 100%;
+        padding: 100px;
+    }
+    #qr-code{
+        width: 95vw;
+        height: 95vw;
+    }
+
+    #qr-code img, #qr-code canvas{
+        max-width: 95vw !important;
+        max-height: 95vw !important;
+    }
+
+    .btn{
+        min-width: unset;
+    }
+}
+@media (max-width: 350px){
+    body{
+        padding: 0;
+        margin: 0;
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .active-container{
+        max-width: 100%;
+        flex-direction: column;
+        margin-top: 0.7rem;
+        width: 100%;
+        align-items: center;
+        display: flex;
+    }
+     .active-container .download{
+        width: 100%;
+    }
+    .active-container .share-btn{
+        margin-top: 0.5rem;
+        width: 100%;
+        margin: 1rem 0;
+    }
+}
