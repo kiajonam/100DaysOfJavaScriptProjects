@@ -1,0 +1,118 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+
+    box-sizing: border-box;
+    font-family: 'Ubuntu';
+    margin: 0;
+    padding: 0;
+}
+
+body{
+font-family: serif;
+background:rgb(206, 238, 198);
+text-align: center;
+color: rgb(114, 114, 114);
+margin: 50% auto;
+user-select: none;
+};
+
+h1{
+    font-size: 2rem;
+    
+}
+
+#container{
+    margin: 5% auto;
+    border-radius: 5px;
+    text-align: center;
+    
+}
+
+.box{
+  display: inline-block;
+  border: 1px solid gray;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+span {
+   position: absolute;
+   font-size: 75px;
+   font-family: sans-serif;
+   text-align: center;
+   height: 75px;
+   width: 75px;
+   padding: 0;
+   margin: 5px;
+   margin-left: -35px; 
+   color: #fff;
+}
+
+.top{
+ border-top: none;   
+}
+.left{
+ border-left: none;   
+}
+
+.bottom{
+ border-bottom: none;   
+}
+
+.right{
+ border-right: none;   
+}
+
+.alert {
+    height: 75px;
+    width: 125px;
+    display: inline-block;
+    background: rgb(247, 247, 255);
+    position: relative;
+    z-index: 10;
+    margin-top: -50%;
+    border-radius: 20px;
+    box-shadow: 0 0 75px 2px dimgray;
+    animation: larger 0.5s;
+    animation-fill-mode: forwards;
+    box-sizing: content-box;
+    padding: 30px;
+    bottom: 50px;
+    top: 0;
+    
+}
+
+button{
+    background: dimgray;
+    border-radius: 2px;
+    color: ghostwhite;
+    border: none;
+    outline: none;
+}
+
+button:focus{
+    background: silver;
+}
+
+.activeBox{
+    background: rgb(252, 167, 252);
+}
+
+@keyframes larger{
+    from{
+        height: 75px;
+        width: 125px;
+    }
+
+
+    to{
+        height: 100px;
+        width: 250px;
+    }
+}
