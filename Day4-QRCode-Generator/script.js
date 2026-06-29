@@ -33,26 +33,45 @@ let size = 100,
  * Creates QR code and updates download link
  */
 async function generateQRCode() {
-  // Clear previous QR
   qrContainer.innerHTML = "";
-
-  // Generate new QR using library
-  new QRCode("qr-code", {
-    width: size,
-    height: size,
-    colorLight,
+  new QRCode("qr-code",{
+    with: size,
+    heigth: size,
     colorDark,
+    colorLight,
     text: text || defaultUrl
-  });
+  })
 
-  // Resolve image data for download
-  try {
+  try{
     const url = await resolveDataUrl();
     download.href = url;
-  } catch (err) {
-    console.error(err);
+  }catch(err) {
+    console.log(err)
   }
 }
+
+
+// async function generateQRCode() {
+//   // Clear previous QR
+//   qrContainer.innerHTML = "";
+
+//   // Generate new QR using library
+//   new QRCode("qr-code", {
+//     width: size,
+//     height: size,
+//     colorLight,
+//     colorDark,
+//     text: text || defaultUrl
+//   });
+
+  // Resolve image data for download
+//   try {
+//     const url = await resolveDataUrl();
+//     download.href = url;
+//   } catch (err) {
+//     console.error(err);
+//   }
+// }
 
 
 // ====== HANDLE TEXT INPUT (DEBOUNCE) ======
@@ -102,24 +121,44 @@ function handleDarkColor(e) {
  * Shares QR code using Web Share API
  */
 async function handleShare() {
-  try {
-    const base64 = await resolveDataUrl();
-
-    const blob = await (await fetch(base64)).blob();
-
-    const file = new File([blob], "QRCode.png", {
-      type: blob.type,
+try {
+  const base64 = await resolveDataUrl();
+  const blob = await (await fetch(base64)).blob();
+  const file = new File([blob], "QRCode.png", {
+  type:blob.type,
+  });
+  
+  await navigator.share({
+    files:[file],
+    title: "MY QR Code"
     });
-
-    await navigator.share({
-      files: [file],
-      title: "MY QR Code"
-    });
-
-  } catch (error) {
-    alert("Your browser doesn't support sharing.");
   }
+ catch(error){
+  alert("Your're Brwoser doesn't sharing!")
+  return;
 }
+
+}
+
+// async function handleShare() {
+//   try {
+//     const base64 = await resolveDataUrl();
+
+//     const blob = await (await fetch(base64)).blob();
+
+//     const file = new File([blob], "QRCode.png", {
+//       type: blob.type,
+//     });
+
+//     await navigator.share({
+//       files: [file],
+//       title: "MY QR Code"
+//     });
+
+//   } catch (error) {
+//     alert("Your browser doesn't support sharing.");
+//   }
+// }
 
 
 // ====== HANDLE SIZE ======
@@ -128,6 +167,7 @@ async function handleShare() {
  */
 function handleSize(e) {
   size = e.target.value;
+  sizes.style.color = "red";
   generateQRCode();
 }
 
@@ -136,7 +176,37 @@ function handleSize(e) {
 /**
  * Extracts QR output as image URL or canvas data URL
  */
+// function resolveDataUrl(){
+//   return new Promise((resolve, reject) => {
+//     setTimeout(()=>{
+//     const container = document.querySelector("#qr-code");
+
+//     const img = container.querySelector("img");
+//     const canvas = container.querySelector("canvas");
+
+//     if(img && img.src){
+//       resolve(img.src);
+//       return;
+//     } 
+
+//     if(canvas){
+//       resolve(canvas.toDataURL());
+//       return;
+//     }
+
+//     reject("QR not found!");
+//   }, 200);
+//   });
+//   }
+
+
+
 function resolveDataUrl() {
+  const p1 = new Promise((resolve)=>{
+    resolve("First Promise");
+  });
+  p1.then(data => console.log(data));
+  
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const container = document.querySelector("#qr-code");
@@ -149,7 +219,7 @@ function resolveDataUrl() {
         return;
       }
 
-      if (canvas) {
+      if (canvas){
         resolve(canvas.toDataURL());
         return;
       }
@@ -158,11 +228,11 @@ function resolveDataUrl() {
     }, 100);
   });
 }
-
+resolveDataUrl();
 
 // ====== INITIAL RENDER ======
 // Generate QR on page load
-generateQRCode();
+// generateQRCode();
 
 
 // ====== GLOBAL ERROR HANDLER ======
