@@ -23,6 +23,9 @@ A simple Battery Status application built with JavaScript and the Battery Status
 
 ![Preview](image.png)
 
+## Live Demo
+https://battery-detector-web.netlify.app
+
 ## How It Works
 
 The application uses:
@@ -30,3 +33,4 @@ The application uses:
 ```js
 navigator.getBattery()
 ```
+
