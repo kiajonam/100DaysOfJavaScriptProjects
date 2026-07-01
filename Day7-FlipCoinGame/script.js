@@ -9,7 +9,7 @@ let restButton = document.querySelector("#rest-button");
 flipButton.addEventListener("click", ()=>{
     let i = Math.floor(Math.random() * 2);
    console.log(i)
-    // coin.style.animation = "none";
+    coin.style.animation = "none";
     coin.offsetWidth;
 
     if(i === 1){

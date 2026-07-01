@@ -43,6 +43,12 @@ A simple **Flip Coin Game** built with **HTML, CSS, and JavaScript**. The applic
 
 ![Preview](image.png)
 
+
+## Live Demo
+
+
+
+
 ## Project Structure
 
 ```text
