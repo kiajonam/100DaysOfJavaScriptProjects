@@ -12,7 +12,7 @@
 :root{
     --gradient-color-red: linear-gradient(90deg, hsl(7,89%,46%) 15%, hsl(11, 93%, 56%) 100%);
       --gradient-color-orange: linear-gradient(90deg, hsl(22, 89%, 59%) 15%, hsl(35, 92%, 60%) 100%);
-      --gradient-color-yellow: linear-gradient(90deg, hsl(54, 89%, 59%) 15%, hsl(62, 100%, 53%) 100%);
+      --gradient-color-yellow: linear-gradient(90deg, hsl(54, 89%, 59%) 15%, hsl(62, 92%, 81%) 100%);
       --gradient-color-green: linear-gradient(90deg, hsl(92, 89%, 59%) 15%, hsl(103, 76%, 69%) 100%);
     --gradient-background: linear-gradient(90deg, hsl(250, 46%, 59%) 15%, hsl(220, 69%, 87%) 100%);
   
@@ -146,8 +146,8 @@ align-items: center;
 
 
 .animated-green, .animated-red, .green-color,.animated-yellow,.animated-orange{
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
 
@@ -213,60 +213,3 @@ align-items: center;
 .gradient-color-green, .gradient-color-green::after{
     background: var(--gradient-color-green);
 }
-
-
-
-/* // initBattery();
-
-// function initBattery(){
-//   const batteryLiquid = document.querySelector(".Bliquid");
-//   const batteryStatus = document.querySelector(".Bstatus");
-//   const Bprecentage = document.querySelector(".Bprecentage");
-
-
-//   navigator.getBattery().then((batt)=>{
-
-//    const updateBattery = ()=>{
-//       let level = Math.floor(batt.level * 100);
-//       Bprecentage.innerHTML = `${level} %`;
-      
-//       batteryLiquid.style.height = `${parseInt(batt.level * 100)}%`;
-//       if(level == 100){
-//         batteryStatus.innerHTML = `Battery Full <i class="ri-battery-2-fill green-color"></i>`;
-//         batteryLiquid.style.height = "100%";
-
-//       }else if(level <= 20 && !batt.charging){
-//          batteryStatus.innerHTML = `Low Charge <i class="ri-plug-line animated-red green-color"></i>`;
-
-//       }if(batt.charging && level < 100){
-//         batteryStatus.innerHTML = `Charging ... <i class="ri-flashlight-line animated-green"></i>`;
-//         batteryLiquid.classList.add("charging-animation")
-//       }else{
-//         batteryStatus.innerHTML = "";
-//         batteryLiquid.classList.remove("charging-animation");
-//       }
-
-
-//       if(level <= 20){
-//         batteryLiquid.classList.add("gradient-color-red");
-//         batteryLiquid.classList.remove("gradient-color-green","gradient-color-orange","gradient-color-yellow")
-//       }else if(level <= 48){
-//         batteryLiquid.classList.add("gradient-color-orange");
-//         batteryLiquid.classList.remove("gradient-color-green","gradient-color-red","gradient-color-yellow");
-//       }else if(level <= 80){
-//           batteryLiquid.classList.add("gradient-color-yellow");
-//         batteryLiquid.classList.remove("gradient-color-orange","gradient-color-red","gradient-color-green");
-//       }else{
-//         batteryLiquid.classList.add("gradient-color-green");
-//         batteryLiquid.classList.remove("gradient-color-orange","gradient-color-red","gradient-color-yellow");
-//       }
-
-//     } 
-
-
-//       batt.addEventListener("levelchange", updateBattery);
-//       batt.addEventListener("chargingchange", updateBattery);
-//       updateBattery();
-//   })
-// }
- */
