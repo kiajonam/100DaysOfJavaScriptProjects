@@ -43,6 +43,8 @@ border-radius: 1.5rem;
 display: grid;
 grid-template-columns: repeat(2, 1fr);
 align-items: center;
+  -webkit-user-select: none;
+        user-select: none;
 }
 
 .Btext{
@@ -96,12 +98,14 @@ align-items: center;
     left: 0;
     right: 0;
     height: 20px;
-    background: var(--gradient-color-red);
-     box-shadow:
-      inset -10px 0 12px hsla(0,0%,0%,0.1),
-      inset 12px 0 12px hsla(0,0%,0%,0.15),
-      0 0 var(--glow, 0px) var(--glow-color, transparent)hsla(0,0%,0%,0.15);
-    transition: 0.3s;
+        background: var(--gradient-color-red);
+        box-shadow:
+            inset -10px 0 12px hsla(0,0%,0%,0.1),
+            inset 12px 0 12px hsla(0,0%,0%,0.15),
+            0 0 var(--glow, 0px) var(--glow-color, transparent);
+        transition: 0.3s;
+        -webkit-user-select: none;
+        user-select: none;
 }
 
 .Bliquid::after{

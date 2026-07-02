@@ -2,6 +2,18 @@
 
 A simple **Flip Coin Game** built with **HTML, CSS, and JavaScript**. The application simulates a real coin toss using CSS 3D animations and randomly displays either **Heads** or **Tails** while keeping track of the results.
 
+
+## Preview
+
+![Preview](image.png)
+
+
+## Live Demo
+
+[🔗 Live Demo](https://sami-flip-coin-game.netlify.app)
+
+
+
 ## Features
 
 * Random coin flip using JavaScript
@@ -37,15 +49,6 @@ A simple **Flip Coin Game** built with **HTML, CSS, and JavaScript**. The applic
 5. After the animation finishes, the corresponding counter is updated.
 6. The flip button is disabled during the animation to prevent multiple clicks.
 7. Press **Reset Game** to clear the score and reset the animation.
-
-
-## Preview
-
-![Preview](image.png)
-
-
-## Live Demo
-
 
 
 
